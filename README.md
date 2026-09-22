@@ -2,6 +2,8 @@
 
 A simple Ethiopian food menu built with React. This project demonstrates React props, PropTypes validation, conditional rendering, component composition, category filtering, empty states, and stable list keys.
 
+Here is a demo link to see what the website looks like https://addis-eats-azure.vercel.app/
+
 ## Features
 
 - 🍛 Ethiopian food menu
