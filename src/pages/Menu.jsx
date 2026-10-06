@@ -33,9 +33,16 @@ export default function Menu() {
 
   return (
     <section className="menu">
-      <div className="hero">
-        <h1>🍽️ Addis Eats</h1>
-        <p>Delicious Ethiopian food for every taste.</p>
+      <div className="menu-hero">
+        <div className="menu-hero-content">
+          <span className="menu-hero-icon">🍽️</span>
+          <h1>Addis Eats</h1>
+          <p>Delicious Ethiopian food for every taste.</p>
+          <div className="menu-hero-line"></div>
+          <span className="menu-hero-tagline">
+            Authentic • Fresh • Delicious
+          </span>
+        </div>
       </div>
 
       <h2>Our Menu</h2>

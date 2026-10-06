@@ -10,10 +10,10 @@ function Layout() {
         <Outlet />
       </main>
 
-      <footer>
+      <footer className="site-footer">
         <p>© 2026 Addis Eats. All rights reserved.</p>
-
-        <Link to="/menu">Browse Menu</Link>
+        <p>Contact: +251 942 425 447</p>
+        <p>Made with ❤️ in Ethiopia</p>
       </footer>
     </div>
   );

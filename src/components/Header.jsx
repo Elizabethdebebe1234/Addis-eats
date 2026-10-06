@@ -2,8 +2,10 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../store/cartStore";
 import { useAuth } from "../AuthContext.jsx";
+import { useTheme } from "../ThemeContext";
 
 function Header() {
+  const { darkMode, toggleDarkMode } = useTheme();
   const items = useCartStore((state) => state.items);
 
   const { user, logout } = useAuth();

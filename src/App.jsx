@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "./ThemeContext";
 
 import { lazy, Suspense } from "react";
 
@@ -29,50 +30,52 @@ function LoadingSkeleton() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<LoadingSkeleton />}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+    <ThemeProvider>
+      <BrowserRouter>
+        <Suspense fallback={<LoadingSkeleton />}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
 
-            <Route
-              path="menu"
-              element={
-                <ErrorBoundary message="The menu could not be displayed.">
-                  <Menu />
-                </ErrorBoundary>
-              }
-            />
+              <Route
+                path="menu"
+                element={
+                  <ErrorBoundary message="The menu could not be displayed.">
+                    <Menu />
+                  </ErrorBoundary>
+                }
+              />
 
-            <Route
-              path="menu/:id"
-              element={
-                <ErrorBoundary message="This dish could not be displayed.">
-                  <DishPage />
-                </ErrorBoundary>
-              }
-            />
+              <Route
+                path="menu/:id"
+                element={
+                  <ErrorBoundary message="This dish could not be displayed.">
+                    <DishPage />
+                  </ErrorBoundary>
+                }
+              />
 
-            <Route path="signin" element={<SignIn />} />
+              <Route path="signin" element={<SignIn />} />
 
-            <Route path="create-account" element={<CreateAccount />} />
+              <Route path="create-account" element={<CreateAccount />} />
 
-            <Route
-              path="checkout"
-              element={
-                <RequireAuth>
-                  <OrderForm />
-                </RequireAuth>
-              }
-            />
+              <Route
+                path="checkout"
+                element={
+                  <RequireAuth>
+                    <OrderForm />
+                  </RequireAuth>
+                }
+              />
 
-            <Route path="receipt" element={<Receipt />} />
+              <Route path="receipt" element={<Receipt />} />
 
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
